@@ -1,0 +1,39 @@
+cerinte:
+
+O aplicatie prin care seful unei firme sa poata monitoriza angajatii prezenti la lucru si sa le asigneze sarcini.
+Aplicatia va avea o interfata pentru sef si cate o interfata pentru fiecare angajat:
+
+interfata grafica pentru fereastra sefului:
+	- afiseaza lista angajatilor prezenti in firma in momentul actual
+		- pentru lista angajatilor prezenti in momentul actual,
+			este afisat numele angajatului si ora la care s-a logat in sistem
+
+	- seful poate transmite o sarcina catre angajat prin -> selecteaza angajatul din lista,
+ 			introduce descrierea sarcinii, apasa pe butonul "transmite sarcina".
+			In momentul in care este creata sarcina, starea sarcinii este "alocata"
+		-Seful poate selecta un deadline pentru sarcina
+		-Seful poate sa asigneze sarcina unui singur angajat, sau unei echipe. Descrierea
+			sarcinii va contine tipul sarcinii (individuala sau de echipa, si va contine 
+				membrii echipei in cazul celei de a doua)
+		-O sarcina (individuala sau de echipa) poate fi asignata mai multor angajati in acelasi
+			timp, prin selectarea tuturor din lista afisata.
+
+interfata grafica pentru fereastra angajatului:
+	- logare in sistem -> se introduce numele si parola angajatului, se apasa butonul "Login" 
+		-ora sosirii este preluata din sistemul sefului. (nu din sistemul angajatului pentru
+			 a preveni schimbarea orei din sistem in favoarea lui).
+			 Se mai poate prelua ora si dintr-un sistem online, independent de sistemele
+			 sefului sau angajatorului.
+	- un angajat poate schimba starea unei sarcini primite la "in progress" in cazul in care a luat la
+		cunostiinta ca sarcina i-a fost asignata si a inceput sa lucreze la sarcina primita
+	- un angajat poate schimba starea unei sarcini "in progress" la "finished" in momentul in care 
+		a terminat lucrul pentru sarcina respectiva
+	- delogare -> angajatul va fi intrebat printr-un pop-up daca este sigur ca doreste sa se delogheze.
+	
+
+comunicare intre cele 2 interfete:
+	- lista de angajati prezentata sefului este actualizata in timp real, de fiecare data cand un angajat
+		 se logheaza/delogheaza
+	- cand seful transmite o sarcina unui angajat, angajatului in cauza ii este afisata sarcina primita si
+		 descrierea acesteia
+	- seful este notificat de fiecare data cand un angajat se delogheaza
